@@ -23,13 +23,13 @@ namespace MemoryUnitTests
     [TestClass]
     public class ResetBoard
     {
-        
+        MemoryGame _Resettest = new MemoryGame(4, 4);
 
         [TestMethod]
         public void ResetBoardShouldCreatePositionInfoForAllBoardPositions()
         {
             //Arrange via setup
-            MemoryGame _Resettest = new MemoryGame(4,4);
+
             //Act
             _Resettest.ResetBoard();
 
@@ -44,5 +44,7 @@ namespace MemoryUnitTests
                 }
             }
         }
+        [TestMethod]
+        public void ResetBoardShould
     }
 }

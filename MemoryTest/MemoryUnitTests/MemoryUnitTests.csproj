@@ -59,6 +59,7 @@
     <Compile Include="PositionInfoTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resetboard.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MemoryLogic\MemoryLogic.csproj">

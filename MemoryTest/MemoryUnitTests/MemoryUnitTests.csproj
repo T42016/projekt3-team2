@@ -57,9 +57,20 @@
   </Choose>
   <ItemGroup>
     <Compile Include="MemoryGameTest.cs" />
+    <Compile Include="ClickCoordinate.cs" />
     <Compile Include="PositionInfoTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MemoryLogic\MemoryLogic.csproj">
+      <Project>{fb79f3a1-bd0e-43d8-8205-5ada6eacf2ec}</Project>
+      <Name>MemoryLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MemoryTest\MemoryTest.csproj">
+      <Project>{03247d2d-1d67-4c38-90a7-48766693b23f}</Project>
+      <Name>MemoryTest</Name>
+    </ProjectReference>
     <Compile Include="Resetboard.cs" />
   </ItemGroup>
   <ItemGroup>

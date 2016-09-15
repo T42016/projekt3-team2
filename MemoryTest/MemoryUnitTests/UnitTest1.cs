@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Runtime.Remoting.Metadata;
 using MemoryLogic;
+using MemoryTest;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MemoryUnitTests
@@ -7,18 +9,8 @@ namespace MemoryUnitTests
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-            //Arange
-           
 
-            //Act
-            
 
-            //Assert
-            
-        }
     }
     [TestClass]
     public class ResetBoard

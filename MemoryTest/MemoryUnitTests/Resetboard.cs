@@ -28,6 +28,7 @@ namespace MemoryUnitTests
                 }
             }
         }
+
         [TestMethod]
         public void ResetBoardShouldInitializePositionInfoWithX()
         {
@@ -46,6 +47,7 @@ namespace MemoryUnitTests
             }
             Assert.IsNotNull(_Resettest.GetCoordinate(0, 0));
         }
+
         [TestMethod]
         public void ResetBoardShouldInitializePositionInfoWithY()
         {
@@ -63,6 +65,19 @@ namespace MemoryUnitTests
                 }
             }
             Assert.IsNotNull(_Resettest.GetCoordinate(0, 0));
+        }
+
+        [TestMethod]
+        public void ResetBoardShouldSetDrawsToZero()
+        {
+            //Arrange
+
+            //Act
+            _Resettest.ResetBoard();
+
+            //Assert
+            Assert.AreEqual(_Resettest.Draws == 0, true);
+
         }
     }
 }

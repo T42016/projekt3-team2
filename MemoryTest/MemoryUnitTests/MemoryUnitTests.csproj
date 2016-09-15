@@ -56,6 +56,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ClickCoordinate.cs" />
     <Compile Include="MemoryGameTest.cs" />
     <Compile Include="PositionInfoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -13,7 +13,7 @@ namespace MemoryUnitTests
 
         public void Setup()
         {
-            _underTest = new MemoryGame(1, 1);
+            _underTest = new MemoryGame(4, 4);
         }
 
         [TestMethod]
@@ -68,9 +68,25 @@ namespace MemoryUnitTests
         {
             //Arrange
 
+
             //Act
+            var coord = _underTest.GetCoordinate(2, 2);
 
             //Assert
+            Assert.AreEqual(coord.X, 2);
+
+        }
+        [TestMethod]
+        public void GetCoordinateShouldReturnCorrectY()
+        {
+            //Arrange
+
+
+            //Act
+            var coord = _underTest.GetCoordinate(2, 2);
+
+            //Assert
+            Assert.AreEqual(coord.Y, 2);
 
         }
     }

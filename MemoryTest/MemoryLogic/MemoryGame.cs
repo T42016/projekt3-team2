@@ -3,6 +3,7 @@ using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MemoryLogic
@@ -13,13 +14,16 @@ namespace MemoryLogic
         public int SizeY { get; }
         public int Draws { get; private set; }
         public bool HasMismatch => lastOpened.Count == 2;
-         
+        public int Maxpoints;
+        public int Points;
+
         public MemoryGame(int sizeX, int sizeY)
         {
             SizeX = sizeX;
             SizeY = sizeY;
             _board = new PositionInfo[sizeX, sizeY];
             ResetBoard();
+            Maxpoints = sizeX*sizeY/2;
         }
 
         private PositionInfo[,] _board;
@@ -30,6 +34,7 @@ namespace MemoryLogic
             Random rnd = new Random();
             List<int> values = new List<int>();
             Draws = 0;
+            Points = 0;
 
             for (int i = 0; i < SizeX*SizeY; i++)
                 values.Add(i/2);
@@ -78,6 +83,11 @@ namespace MemoryLogic
                 lastOpened.First().IsFound = true;
                 lastOpened.Clear();
                 Draws++;
+                Points++;
+                if (Points == Maxpoints)
+                {
+                    Win();
+                }
             }
             else
             {
@@ -85,6 +95,16 @@ namespace MemoryLogic
                 if(lastOpened.Count == 2)
                     Draws++;
             }
+        }
+
+        public void Win()
+        {
+            Console.Clear();
+            Console.WriteLine("You Win!");
+            Thread.Sleep(2000);
+            Console.Clear();
+            
+            ResetBoard();
         }
 
     }

@@ -79,5 +79,23 @@ namespace MemoryUnitTests
             Assert.AreEqual(_Resettest.Draws == 0, true);
 
         }
+        [TestMethod]
+        public void ResetBoardShouldSetAllCoordinatesToNotOpen()
+        {
+            //Arrange via Setup
+
+            //Act
+            _Resettest.ResetBoard();
+
+            //Assert
+            for (int y = 0; y < _Resettest.SizeY; y++)
+            {
+                for (int x = 0; x < _Resettest.SizeX; x++)
+                {
+                    Assert.AreEqual(false, _Resettest.GetCoordinate(x, y).IsOpen);
+                }
+            }
+            Assert.IsNotNull(_Resettest.GetCoordinate(0, 0));
+        }
     }
 }

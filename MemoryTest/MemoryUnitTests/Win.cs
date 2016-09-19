@@ -31,6 +31,8 @@ namespace MemoryUnitTests
 
             //Assert
             Assert.AreEqual(game.Maxpoints, game.SizeX * game.SizeY / 2);
-        }
+        }  
+
+        
     }
 }

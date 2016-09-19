@@ -103,8 +103,7 @@ namespace MemoryLogic
             Console.WriteLine("You Win!");
             Thread.Sleep(2000);
             Console.Clear();
-            
-            ResetBoard();
+
         }
 
     }

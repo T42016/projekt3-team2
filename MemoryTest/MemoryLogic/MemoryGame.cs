@@ -84,10 +84,6 @@ namespace MemoryLogic
                 lastOpened.Clear();
                 Draws++;
                 Points++;
-                if (Points == Maxpoints)
-                {
-                    Win();
-                }
             }
             else
             {
@@ -96,15 +92,5 @@ namespace MemoryLogic
                     Draws++;
             }
         }
-
-        public void Win()
-        {
-            Console.Clear();
-            Console.WriteLine("You Win!");
-            Thread.Sleep(2000);
-            Console.Clear();
-
-        }
-
     }
 }

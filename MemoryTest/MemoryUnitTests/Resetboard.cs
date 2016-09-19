@@ -242,5 +242,27 @@ namespace MemoryUnitTests
             //Assert
             Assert.AreEqual(2, count);
         }
+
+        [TestMethod]
+        public void ResetBoardShouldSetDrawsToZero()
+        {
+            //Arrange
+            MemoryGame game = new MemoryGame(2, 2);
+            //Act
+
+            //Assert
+            Assert.AreEqual(game.Draws == 0, true);
+        }
+
+        [TestMethod]
+        public void ResetBoardShouldSetPointsToZero()
+        {
+            //Arrange
+            MemoryGame game = new MemoryGame(2, 2);
+            //Act
+
+            //Assert
+            Assert.AreEqual(game.Points == 0, true);
+        }
     }
 }

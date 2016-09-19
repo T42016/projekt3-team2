@@ -1,5 +1,6 @@
 ﻿using System;
 using MemoryLogic;
+using MemoryTest;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MemoryUnitTests
@@ -11,11 +12,11 @@ namespace MemoryUnitTests
         public void WinsWhenAllPairsAreDiscovered()
         {
             //Arrange
-            MemoryGame game = new MemoryGame(1,2);
+            MemoryGame game = new MemoryGame(1, 2);
 
             //Act
-            game.ClickCoordinate(0,1);
-            game.ClickCoordinate(0,0);
+            game.ClickCoordinate(0, 1);
+            game.ClickCoordinate(0, 0);
 
             //Assert
             Assert.AreEqual(game.Points, game.Maxpoints);
@@ -30,9 +31,8 @@ namespace MemoryUnitTests
             //Act
 
             //Assert
-            Assert.AreEqual(game.Maxpoints, game.SizeX * game.SizeY / 2);
-        }  
-
+            Assert.AreEqual(game.Maxpoints, game.SizeX*game.SizeY/2);
+        }
         
     }
 }

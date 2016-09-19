@@ -52,7 +52,7 @@ namespace MemoryTest
                     {
                         Console.WriteLine("Input Width Of Playing Field! (Max 10, Min 2,)");
                         width = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Input Hight Of Playing Field! (Max 10, Min 2)");
+                        Console.WriteLine("Input Height Of Playing Field! (Max 10, Min 2)");
                         height = int.Parse(Console.ReadLine());
                     }
                     catch (Exception e)
@@ -70,20 +70,32 @@ namespace MemoryTest
                     break;
             }
 
-            if (width * height % 2 == 0 && width * height <= 100 && width * height >= 4)
+            if (width* height <= 100 && width * height >= 4)
             {
-                game.ResetBoard();
-                game = new MemoryGame(width, height);
-                Console.Clear();
-                Setup();
+                if (width * height % 2 == 0)
+                {
+                    game.ResetBoard();
+                    game = new MemoryGame(width, height);
+                    Console.Clear();
+                    Setup();
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("!ERROR! The Playing Field Needs A Even Number Of Positions !ERROR!");
+                    Thread.Sleep(2000);
+                    Menu();
+                }
+                
             }
             else
             {
                 Console.Clear();
-                Console.WriteLine("!ERROR! The Playing Field Needs A Even Number Of Positions !ERROR!");
+                Console.WriteLine("!ERROR! Width Or Height Had A Value Above 10 Or Under 2 !ERROR!");
                 Thread.Sleep(2000);
                 Menu();
             }
+            
         }
 
         static void Setup()

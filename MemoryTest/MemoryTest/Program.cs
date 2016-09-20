@@ -70,7 +70,7 @@ namespace MemoryTest
                     break;
             }
 
-            if (width* height <= 100 && width * height >= 4)
+            if (height < 11 && height > 1 && width < 11 && width > 1)
             {
                 if (width * height % 2 == 0)
                 {

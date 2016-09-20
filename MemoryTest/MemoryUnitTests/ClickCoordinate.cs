@@ -47,7 +47,7 @@ namespace MemoryUnitTests
             //Assert
             Assert.AreEqual(1, game.Draws);
         }
-
+        
         [TestMethod]
         public void ClickCoordinateShouldNotAddToDrawsYet()
         {
@@ -55,6 +55,20 @@ namespace MemoryUnitTests
             MemoryGame game = new MemoryGame(5, 5);
 
             //Act
+            game.ClickCoordinate(0, 0);
+
+            //Assert
+            Assert.AreEqual(0, game.Draws);
+        }
+
+        [TestMethod]
+        public void ClickCoordinateShouldNotAcceptOpenedPositions()
+        {
+            //Arange
+            MemoryGame game = new MemoryGame(5, 5);
+
+            //Act
+            game.ClickCoordinate(0, 0);
             game.ClickCoordinate(0, 0);
 
             //Assert

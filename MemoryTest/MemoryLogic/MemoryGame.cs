@@ -16,6 +16,11 @@ namespace MemoryLogic
         public bool HasMismatch => lastOpened.Count == 2;
         public int Maxpoints;
         public int Points;
+        public int PosX = 0;
+        public int PosY = 0;
+
+        private static char[] symbols = { '*', '!', 'ü', '?', 'ö', 'ä', 'å', '&', '@', '£', '#', '$', '¤', '§', '=', '½', 'w', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '^', '~', '-', ';', ':', '[', '(', '{' };
+
 
         public MemoryGame(int sizeX, int sizeY)
         {
@@ -91,6 +96,35 @@ namespace MemoryLogic
                 if(lastOpened.Count == 2)
                     Draws++;
             }
+        }
+
+        public void DrawBoard()
+        {
+            for (int y = 0; y < SizeY; y++)
+            {
+                for (int x = 0; x < SizeX; x++)
+                {
+                    if (x == PosX && y == PosY)
+                        Console.BackgroundColor = ConsoleColor.DarkCyan;
+                    else
+                        Console.BackgroundColor = ConsoleColor.Black;
+
+                    var info = GetCoordinate(x, y);
+                    if (info.IsOpen)
+                    {
+                        Console.ForegroundColor = info.IsFound ? ConsoleColor.Green : ConsoleColor.Cyan;
+                        Console.Write(symbols[info.Value] + " ");
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        Console.Write(". ");
+                    }
+                }
+                Console.WriteLine();
+            }
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.BackgroundColor = ConsoleColor.Black;
         }
     }
 }

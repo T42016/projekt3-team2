@@ -18,7 +18,7 @@ namespace MemoryTest
                 Menu();
         }
 
-        static void Win()
+        public static void Win()
         {
             Console.Clear();
             Console.WriteLine("You Win!");
@@ -28,7 +28,7 @@ namespace MemoryTest
             Menu();
         }
 
-        static void Menu()
+        public static void Menu()
         {
             int height = 0;
             int width = 0;

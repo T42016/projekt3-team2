@@ -29,6 +29,7 @@ namespace MemoryUnitTests
             MemoryGame game = new MemoryGame(3, 3);
 
             //Act
+            
 
             //Assert
             Assert.AreEqual(game.Maxpoints, game.SizeX*game.SizeY/2);
